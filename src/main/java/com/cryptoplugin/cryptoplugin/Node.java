@@ -18,13 +18,13 @@ public class Node {
         this.NODE_PORT=18333;
         this.NODE_USERNAME="testuser";
         this.NODE_PASSWORD="testpass";
-        this.COINGECKO_CRYPTO="bitcoin";
-        this.CRYPTO_TICKER="BTC";
-        this.P_FLAG="BTC";
+        this.COINGECKO_CRYPTO="raptoreum";
+        this.CRYPTO_TICKER="RTM";
+        this.P_FLAG="RTM";
         this.USD_DECIMALS="0.00";
         this.DENOMINATION_NAME="Sats";
-        this.ADDRESS_URL="https://www.blockchain.com/btc/address/";
-        this.TX_URL="https://www.blockchain.com/btc/tx/";
+        this.ADDRESS_URL="https://explorer.raptoreum.com/address/";
+        this.TX_URL="https://explorer.raptoreum.com/tx/";
         this.CRYPTO_DECIMALS=8;
         this.DISPLAY_DECIMALS=8;
         this.CONFS_TARGET=6;
@@ -65,7 +65,7 @@ public class Node {
         oneSat();
         howmanyDisplayDecimals();
     }
-    
+
    public void wholeCoin() {
     Long oneCoin = 1L;
     for (int x = 1; x <= this.CRYPTO_DECIMALS; x++) {
@@ -92,7 +92,7 @@ public class Node {
     //System.out.println("Lowest Crypto Decimal set: " + globalDecimalFormat.format(oneSats));
     this.BaseSat = Double.parseDouble(this.GlobalDecimalFormat.format(oneSats));
   }
-  
+
     public void howmanyDisplayDecimals() {
     String DCF = "0.";
     for (int y = 1; y <= this.DISPLAY_DECIMALS; y++) {
@@ -109,7 +109,7 @@ public class Node {
     //System.out.println("Lowest Display Decimal set: " + displayDecimalFormat.format(oneSats));
     DisplaySats = oneSats;
   }
-  
+
     public Long convertCoinToSats(Double wholeCoinAmount) {
     Double tempAmount = wholeCoinAmount;
     Long oneCoin = 1L;
@@ -134,6 +134,6 @@ public class Node {
     BigDecimal decimalSat = new BigDecimal(tempAmount * oneCoin);
     // System.out.println("tempAmount : "+decimalSat);
     return (Double.parseDouble(decimalSat.toString()));
-  } 
+  }
 
 }
